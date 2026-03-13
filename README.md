@@ -10,10 +10,15 @@ Jenkins Ready: Integrated Playwright Tracing and HTML reporting.
 
 # 🏗️ Project Structure
 pages/: Page Object classes (Login, Dashboard, Attendance, etc.)
-attendance.feature: cUCUMBER-Gherkin scenario definitions.
+
+attendance.feature: Cucumber-Gherkin scenario definitions.
+
 conftest.py: Global fixtures and browser configuration.
+
 pytest.ini: Test runner configuration and markers.
+
 test_attendance_bdd.py: BDD Runner
+
 test_hrm_pom.py: Direct POM Runner 
 
 # 🧪 Running Tests
