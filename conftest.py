@@ -54,15 +54,17 @@ def browser_type_launch_args(pytestconfig):
     This is the ONLY place 'channel' is allowed.
     """
     browser_name = pytestconfig.getoption("browser_name")
-
-    # Start with headless=False (or True for Jenkins)
-    launch_args = {"headless": False}
+    # 1. Fetch environment variable and normalize to lowercase string
+    ci_env_str = os.getenv("CI", "false").lower()
+    # 2. Compare string to "true" to create a REAL Boolean (True or False)
+    is_ci_boolean = (ci_env_str == "true")
+    # 3. Assign the Boolean result to headless. headless=False for local runs (or True for Jenkins)
+    launch_args = {"headless": is_ci_boolean}
 
     if browser_name == "edge":
         launch_args["channel"] = "msedge"
     elif browser_name == "chrome":
         launch_args["channel"] = "chrome"
-
     # Firefox has no channel, so it just gets {"headless": False}
     return launch_args
 
