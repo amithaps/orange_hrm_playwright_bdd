@@ -4,9 +4,14 @@ AUT: https://opensource-demo.orangehrmlive.com/
 
 # 🚀 Features
 BDD Support: Gherkin scenarios using pytest-bdd.
+
 POM Architecture: Clean separation of page logic and test execution.
+
 Multi-Browser: Custom support for Chrome, Firefox, and Edge.
-Jenkins Ready: Integrated Playwright Tracing and HTML reporting.
+
+Jenkins Ready: Automated pipeline with Jenkinsfile (Pipeline-as-Code). 
+
+Artifact Reporting: Integrated Playwright Tracing and self-contained HTML reporting.
 
 # 🏗️ Project Structure
 pages/: Page Object classes (Login, Dashboard, Attendance, etc.)
@@ -21,8 +26,13 @@ test_attendance_bdd.py: BDD Runner
 
 test_hrm_pom.py: Direct POM Runner 
 
+Jenkinsfile: Pipeline definition for Docker-based CI execution.
+
 # 🧪 Running Tests
 You can run tests using the custom --browser_name flag. Tracing is enabled to record test execution for debugging.
+
+# Jenkins Execution & Reporting
+## This project is configured to run automatically in Jenkins using a Pipeline-as-Code setup, executed within a Dockerized Playwright agent for environment consistency.
 
 # BDD Execution (Attendance Flow)
 ## Run in Firefox
