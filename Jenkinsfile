@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/amithaps/orange_hrm_playwright_bdd.git'
+                checkout scm
             }
         }
 
