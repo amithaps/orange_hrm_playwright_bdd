@@ -32,7 +32,7 @@ Jenkinsfile: Pipeline definition for Docker-based CI execution.
 You can run tests using the custom --browser_name flag. Tracing is enabled to record test execution for debugging.
 
 # Jenkins Execution & Reporting
-## This project is configured to run automatically in Jenkins using a Pipeline-as-Code setup, executed within a Dockerized Playwright agent for environment consistency.
+This project is configured to run automatically in Jenkins using a Pipeline-as-Code setup, executed within a Dockerized Playwright agent for environment consistency.
 
 # BDD Execution (Attendance Flow)
 ## Run in Firefox
