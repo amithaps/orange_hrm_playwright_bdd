@@ -1,4 +1,17 @@
 import pytest
+import os
+
+
+@pytest.fixture(scope="session")
+def user_creds():
+    """
+    Fixture to provide credentials.
+    Uses Jenkins environment variables if present, otherwise falls back to local defaults.
+    """
+    user = os.getenv('ORANGE_HRM_CREDS_USR', 'Admin')
+    pw = os.getenv('ORANGE_HRM_CREDS_PSW', 'admin123')
+
+    return {"user_name": user, "user_pwd": pw}
 
 # @pytest.fixture(scope="session")
 # def fixture_user_creds(request):
@@ -43,7 +56,7 @@ def browser_type_launch_args(pytestconfig):
     browser_name = pytestconfig.getoption("browser_name")
 
     # Start with headless=False (or True for Jenkins)
-    launch_args = {"headless": True}
+    launch_args = {"headless": False}
 
     if browser_name == "edge":
         launch_args["channel"] = "msedge"

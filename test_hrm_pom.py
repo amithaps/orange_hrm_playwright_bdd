@@ -5,12 +5,13 @@ from pages.login_page import LoginPage
 
 @pytest.mark.smoke
 @pytest.mark.regression
-def test_orange_hrm_attendance_flow(page: Page):
+def test_orange_hrm_attendance_flow(page: Page, user_creds):
     # 1. Initialize and Login
     # The login method should return a DashboardPage instance
     login_page = LoginPage(page)
     login_page.launch_app()
-    dashboard_page = login_page.submit_login_page("Admin", "admin123")
+    dashboard_page = login_page.submit_login_page(user_creds["user_name"],
+                                                  user_creds["user_pwd"])
 
     # 2. Navigate to Attendance
     # The dashboard method should return an AttendancePage instance

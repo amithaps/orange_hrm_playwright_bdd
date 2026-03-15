@@ -28,9 +28,10 @@ def launch_hrm(test_step_context, page):
     test_step_context.login_page = LoginPage(page)
     test_step_context.login_page.launch_app()
 
-@when(parsers.parse("I login with username {username} and password {password}"))
-def login_hrm(test_step_context, username, password):
-    test_step_context.dashboard_page = test_step_context.login_page.submit_login_page(username, password)
+@when(parsers.parse("I login with credentials"))
+def login_hrm(test_step_context, user_creds):
+    test_step_context.dashboard_page = test_step_context.login_page.submit_login_page(user_creds["user_name"],
+                                                                                      user_creds["user_pwd"])
 
 @when("I navigate to the Attendance section")
 def navigate_to_attendance(test_step_context):
