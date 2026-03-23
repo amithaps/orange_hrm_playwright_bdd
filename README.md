@@ -11,7 +11,7 @@ Multi-Browser: Custom support for Chrome, Firefox, and Edge.
 
 Jenkins Ready: Automated pipeline with Jenkinsfile (Pipeline-as-Code). 
 
-Artifact Reporting: Integrated Playwright Tracing and self-contained HTML reporting.
+Artifact Reporting: Integrated Playwright Tracing and self-contained local HTML reporting.
 
 # 🏗️ Project Structure
 pages/: Page Object classes (Login, Dashboard, Attendance, etc.)
