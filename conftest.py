@@ -6,10 +6,15 @@ import os
 def user_creds():
     """
     Fixture to provide credentials.
-    Uses Jenkins environment variables if present, otherwise falls back to local defaults.
+    Uses Jenkins environment variables. From local refers to local Env Vars.
     """
-    user = os.getenv('ORANGE_HRM_CREDS_USR', 'Admin')
-    pw = os.getenv('ORANGE_HRM_CREDS_PSW', 'admin123')
+    # user = os.getenv('ORANGE_HRM_CREDS_USR', 'Admin')
+    # pw = os.getenv('ORANGE_HRM_CREDS_PSW', 'admin123')
+    user = os.getenv('ORANGE_HRM_CREDS_USR')
+    pw = os.getenv('ORANGE_HRM_CREDS_PSW')
+
+    if not user or not pw:
+        pytest.exit("\n[ERROR] Credentials not found! Check your Jenkins Vault or local Env Vars.")
 
     return {"user_name": user, "user_pwd": pw}
 

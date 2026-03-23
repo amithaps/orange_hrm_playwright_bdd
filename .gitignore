@@ -7,3 +7,5 @@ assets/
 *.zip
 .idea/
 .vscode/
+.clinerules
+orangehrm_login_page_snapshot.md
