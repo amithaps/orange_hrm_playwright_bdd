@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # we must install the actual branded Google Chrome binary.
 # 'playwright install' alone installs Chromium, Firefox, and WebKit.
 # 'playwright install chrome' specifically adds the Google Chrome stable build.
-RUN playwright install chrome
+RUN playwright install chromium firefox webkit chrome
 
 # 5. THE "PORTABILITY" LINE: Copy the project code into the image
 COPY . .
