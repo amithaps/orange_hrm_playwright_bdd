@@ -1,6 +1,8 @@
 import pytest
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 @pytest.fixture(scope="session")
 def user_creds():
